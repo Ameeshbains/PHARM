@@ -29,7 +29,7 @@
 <!--icons-->
 <!--icons-->
 <div class="icon">
-    <a href="cart.php">
+    <a href="../SHOPCART/cart.php">
     <div id="cart-btn" class="fa fa-shopping-cart"></div>
     
 </div>

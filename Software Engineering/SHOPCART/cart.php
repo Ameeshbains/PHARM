@@ -1,127 +1,135 @@
+<?php
 
+@include './config/config.database.login.php';
+
+try {
+   $pdo = new PDO("mysql:host=localhost;dbname=pharm", "root", "root");
+   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+   die("Database connection failed: " . $e->getMessage());
+}
+
+if(isset($_POST['update_update_btn'])){
+    $update_value = $_POST['update_quantity'];
+    $update_id = $_POST['update_quantity_id'];
+    try {
+        $stmt = $pdo->prepare("UPDATE `cart` SET cartQuant = ? WHERE cartID = ?");
+        $stmt->execute([$update_value, $update_id]);
+        header('location:cart.php');
+    } catch (PDOException $e) {
+        // Handle error
+    }
+}
+
+if(isset($_GET['remove'])){
+    $remove_id = $_GET['remove'];
+    try {
+        $stmt = $pdo->prepare("DELETE FROM `cart` WHERE cartID = ?");
+        $stmt->execute([$remove_id]);
+        header('location:cart.php');
+    } catch (PDOException $e) {
+        // Handle error
+    }
+}
+
+if(isset($_GET['delete_all'])){
+    try {
+        $stmt = $pdo->prepare("DELETE FROM `cart`");
+        $stmt->execute();
+        header('location:cart.php');
+    } catch (PDOException $e) {
+        // Handle error
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>shopping cart</title>
 
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<title>bs4 cart - Bootdey.com</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../SHOPCART/cart.css">
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/css2/HEADER_MAIN.css">
 
 </head>
 <body>
-<div class="container px-3 my-5 clearfix">
 
-<div class="card">
-<div class="card-header">
-<h2>Shopping Cart</h2>
-</div>
-<div class="card-body">
-<div class="table-responsive">
-<table class="table table-bordered m-0">
-<thead>
-<tr>
+<?php 
 
-<th class="text-center py-3 px-4" style="min-width: 400px;">Product Name &amp; Details</th>
-<th class="text-right py-3 px-4" style="width: 100px;">Price</th>
-<th class="text-center py-3 px-4" style="width: 120px;">Quantity</th>
-<th class="text-right py-3 px-4" style="width: 100px;">Total</th>
-<th class="text-center align-middle py-3 px-0" style="width: 40px;"><a href="#" class="shop-tooltip float-none text-light" title data-original-title="Clear cart"><i class="ino ion-md-trash"></i></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="p-4">
-<div class="media align-items-center">
-<img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="d-block ui-w-40 ui-bordered mr-4" alt>
-<div class="media-body">
-<a href="#" class="d-block text-dark">Product 1</a>
-<small>
-<span class="text-muted">Color:</span>
-<span class="ui-product-color ui-product-color-sm align-text-bottom" style="background:#e81e2c;"></span> &nbsp;
-<span class="text-muted">Size: </span> EU 37 &nbsp;
-<span class="text-muted">Ships from: </span> China
-</small>
-</div>
-</div>
-</td>
-<td class="text-right font-weight-semibold align-middle p-4">$57.55</td>
-<td class="align-middle p-4"><input type="text" class="form-control text-center" value="2"></td>
-<td class="text-right font-weight-semibold align-middle p-4">$115.1</td>
-<td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title data-original-title="Remove">×</a></td>
-</tr>
-<tr>
-<td class="p-4">
-<div class="media align-items-center">
-<img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="d-block ui-w-40 ui-bordered mr-4" alt>
-<div class="media-body">
-<a href="#" class="d-block text-dark">Product 2</a>
-<small>
-<span class="text-muted">Color:</span>
-<span class="ui-product-color ui-product-color-sm align-text-bottom" style="background:#000;"></span> &nbsp;
-<span class="text-muted">Storage: </span> 32GB &nbsp;
-<span class="text-muted">Warranty: </span> Standard - 1 year &nbsp;
-<span class="text-muted">Ships from: </span> China
-</small>
-</div>
-</div>
-</td>
-<td class="text-right font-weight-semibold align-middle p-4">$1049.00</td>
-<td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
-<td class="text-right font-weight-semibold align-middle p-4">$1049.00</td>
-<td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title data-original-title="Remove">×</a></td>
-</tr>
-<tr>
-<td class="p-4">
-<div class="media align-items-center">
-<img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="d-block ui-w-40 ui-bordered mr-4" alt>
-<div class="media-body">
-<a href="#" class="d-block text-dark">Product 3</a>
-<small>
-<span class="text-muted">Ships from: </span> Germany
-</small>
-</div>
-</div>
-</td>
-<td class="text-right font-weight-semibold align-middle p-4">$20.55</td>
-<td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
-<td class="text-right font-weight-semibold align-middle p-4">$20.55</td>
-<td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title data-original-title="Remove">×</a></td>
-</tr>
-</tbody>
-</table>
+include "./TEMPLATE/cart.header.php";
+
+?>
+
+<div class="container">
+
+<section class="shopping-cart">
+
+   <h1 class="heading">shopping cart</h1>
+
+   <table>
+
+      <thead>
+         <th>image</th>
+         <th>name</th>
+         <th>price</th>
+         <th>quantity</th>
+         <th>total price</th>
+         <th>action</th>
+      </thead>
+
+      <tbody>
+
+         <?php 
+
+         // Fetching cart items using PDO
+         $select_cart = $pdo->query("SELECT * FROM `cart`");
+         $grand_total = 0;
+         while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+         ?>
+
+         <tr>
+            <td><img src="/uploaded_img/<?php echo $fetch_cart['cartIMG']; ?>" height="100" alt=""></td>
+            <td><?php echo $fetch_cart['cartName']; ?></td>
+            <td>$<?php echo number_format($fetch_cart['cartPrice']); ?>/-</td>
+            <td>
+               <form action="" method="post">
+                  <input type="hidden" name="update_quantity_id"  value="<?php echo $fetch_cart['cartID']; ?>" >
+                  <input type="number" name="update_quantity" min="1"  value="<?php echo $fetch_cart['cartQuant']; ?>" >
+                  <input type="submit" value="update" name="update_update_btn">
+               </form>   
+            </td>
+            <td>$<?php echo $sub_total = number_format($fetch_cart['cartPrice'] * $fetch_cart['cartQuant']); ?>/-</td>
+            <td><a href="cart.php?remove=<?php echo $fetch_cart['cartID']; ?>" onclick="return confirm('remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> remove</a></td>
+         </tr>
+         <?php
+           $grand_total += $sub_total;  
+         };
+         ?>
+         <tr class="table-bottom">
+            <td><a href="products.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
+            <td colspan="3">grand total</td>
+            <td>$<?php echo $grand_total; ?>/-</td>
+            <td><a href="cart.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
+         </tr>
+
+      </tbody>
+
+   </table>
+
+   <div class="checkout-btn">
+      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
+   </div>
+
+</section>
+
 </div>
 
-<div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
-<div class="mt-4">
-<label class="text-muted font-weight-normal">Promocode</label>
-<input type="text" placeholder="ABC" class="form-control">
-</div>
-<div class="d-flex">
-<div class="text-right mt-4 mr-5">
-<label class="text-muted font-weight-normal m-0">Discount</label>
-<div class="text-large"><strong>$20</strong></div>
-</div>
-<div class="text-right mt-4">
-<label class="text-muted font-weight-normal m-0">Total price</label>
-<div class="text-large"><strong>$1164.65</strong></div>
-</div>
-</div>
-</div>
-<div class="float-right">
-<button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</button>
-<button type="button" class="btn btn-lg btn-primary mt-2">Checkout</button>
-</div>
-</div>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript">
-	
-</script>
 </body>
 </html>

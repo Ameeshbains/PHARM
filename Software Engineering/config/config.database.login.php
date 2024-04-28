@@ -18,5 +18,15 @@ try {
  } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
  }
+
+
+
+
  
+?>
+
+<?php
+
+$conn = mysqli_connect('localhost','root','root','pharm') or die('connection failed');
+
 ?>

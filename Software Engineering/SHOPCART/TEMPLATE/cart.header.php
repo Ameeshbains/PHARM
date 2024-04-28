@@ -2,14 +2,13 @@
 
    <div class="flex">
 
-      <a href="../INDEX.PHP" class="logo">ADA PHARMACY</a>
+      <a href="#" class="logo">ADA PHARMACY</a>
 
       <nav class="navbar">
-         <a href="#">ADMIN PAGE</a>
-         
-
+         <a href="/INDEX.PHP">HOME</a>
+         <a href="#">LOGIN</a>
+         <a href="/PRODUCTS.MAIN/products.php">MEDICINE</a>
       </nav>
-
 
       <?php
       try {
@@ -22,11 +21,9 @@
       }
       ?>
 
-      <a href="cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a>
+      <a href="/SHOPCART/cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a>
 
       <div id="menu-btn" class="fas fa-bars"></div>
-
-
 
    </div>
 
