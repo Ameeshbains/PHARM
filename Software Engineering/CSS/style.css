@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+--black: black;
+--purple: purple;
+--light-color:#666;
+--box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+
+}
+
+* {
+
+	font-family: 'andika';
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	text-transform: none;
+	transition: all .2s linear;
+}
+
+html{
+	font-size: 62.5%;
+	overflow-x: hidden;
+	scroll-padding-top:7rem;
+	scroll-behavior: smooth
+
+}
+
+body{
+	background: #fff;
+
+}
+
+/*header*/
+
+.header{
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: var(--box-shadow)
+    
+}
+
+
+/*header*/
+
+.header .logo img{
+	margin-top: 10px;
+	height: 95%;
+	width: 65%;
+	display: inline-block;
+}
+
+.header .headbar a{
+	font-size: 1,7rem;
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	color: var(--light-color);
+}
+
+.header .headbar a:hover{
+	color: #fff;
+	background: linear-gradient(120deg,#FAB2FF 40%, #663399);
+}
+
+.header .menubtn{
+	margin-right: 60px;
+}
+
+.header .menubtn button{
+	padding: 10px 45px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	border: none;
+	background-image: linear-gradient(to right ,#649bff ,#0070fa,#649bff);
+	border-radius: 10px;
+}
+
+/*header*/
+
+/*main*/
+
+.main{
+	width: 100%;
+	display: flex;
+}
+
+.main .left {
+	padding-left: 50px;
+	text-align: center;
+	line-height: 1.6;
+}
+
+.main .left h2{
+	padding-top: 46%;
+	font-size: 15px;
+	text-transform: capitalize;
+	color: var(--light-color);
+	margin-top: 100px;
+}
+.main .left h1{
+	font-size: 42px;
+	text-transform: capitalize;
+	font-weight: 700;
+	margin: 15px 0;
+}
+.main .left p{
+	margin-bottom: 20px;
+	font-size: 15px;
+	color: var(--light-color);	
+}
+.main .left button{
+	padding-top: 12px;
+	padding: 15px 45px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	border: 1px solid;
+	box-shadow: var(--box-shadow);
+	background-image: linear-gradient(to right ,#649bff ,#0070fa,#649bff);
+	border-radius: 10px;
+}
+
+.main .right img{
+	padding-top: 25%;
+	width: 130%;
+	height: 113%;
+	display: flex;
+
+
+
+
+	.error {
+		color: red;
+		font-size: 0.8em;
+        }

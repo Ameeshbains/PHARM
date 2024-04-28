@@ -1,0 +1,249 @@
+/* Basic CSS for styling the admin panel */
+.admin-panel {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 400px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.admin-panel p {
+    margin: 10px 0;
+}
+
+.admin-panel p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+/* Basic CSS for styling the clickable button */
+.btn1{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn1:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+label {
+    display: block;
+    margin: 5px 0;
+   } 
+
+
+   table {
+    border-collapse: collapse;
+    border-spacing: 0;
+   }
+   td,
+   th {
+    padding: 5px;
+    border-bottom: 1px solid #aaa;
+   } 
+   
+
+
+
+
+   /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Product List Styles */
+.product-list {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-list h2 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+.product-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-name {
+    flex-grow: 1;
+}
+
+.edit-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+/* Edit Product Styles */
+.edit-product {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.edit-product form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.edit-product form input[type="text"],
+.edit-product form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.edit-product form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-product form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+
+/* Centering Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* List Styles */
+.center-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.center-list li {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* Centering Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Box Styles */
+.box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* List Styles */
+.center-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+.center-list li {
+    margin-bottom: 10px;
+}

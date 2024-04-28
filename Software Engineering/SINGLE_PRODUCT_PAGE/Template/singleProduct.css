@@ -1,0 +1,192 @@
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 200px auto 0; /* Added 50px margin to the top */
+    margin-bottom: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Main container */
+.product-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Product card */
+.product-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Product image */
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Product content */
+.product-content {
+    margin-top: 20px;
+}
+
+/* Product name */
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Product description */
+.product-description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Product price */
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00a;
+    margin-top: 10px;
+}
+
+/* Add to basket button */
+.add-to-basket-btn {
+    background-color: #00a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-basket-btn:hover {
+    background-color: #007;
+}
+
+/* Section title */
+.section-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Product ingredients */
+.product-ingredients {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Review section */
+.review-section {
+    margin-top: 30px;
+}
+
+/* Review */
+.review {
+    margin-top: 20px;
+}
+
+.review h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.review p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Login form */
+.login-form {
+    margin-top: 20px;
+}
+
+.login-form h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-form form {
+    margin-top: 10px;
+}
+
+.login-form input,
+.login-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #00a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    
+}
+
+
+.card-content button{
+    background-color: #00a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+.card-content, .section1{
+
+
+    margin-top: 50px;
+}
+
+.card-content, .section2{
+
+    margin-top: 80px;
+}
+
+.card-content, .login-form{
+
+    margin-top: 100px;
+}
