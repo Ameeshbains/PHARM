@@ -2,66 +2,40 @@
 
 
 
+<header class="header">
 
-<!--nav bar-->
-<nav class="headbar">
-    <a href="INDEX.php">Home</a>
-    <a href="login.php">Login</a>
-    <a href="doc.html">Doctors</a>
-    <a href="PRODUCT.php">Medicine</a>
-    <a href="service.html">Service</a>
-    <a href="contact.html">Contact</a>
-</nav>
+   <div class="flex">
 
-<!--nav bar-->
+      <a href="../INDEX.PHP" class="logo">ADA PHARMACY</a>
 
-
-
-<li class="search-container">
-    <form action="C:\laragon\www\Software Engineering\SINGLE_PRODUCT_PAGE\singleProd.main.php" method="GET">
-
-        <input type="text" placeholder="Search..." name="search_query">
-
-        <button type="submit" value="submit">Search</button>
-    </form>
-</li>
-
-<!--icons-->
-<!--icons-->
-<div class="icon">
-    <a href="../SHOPCART/cart.php">
-    <div id="cart-btn" class="fa fa-shopping-cart"></div>
+      <nav class="navbar">
+        <a href="../INDEX.PHP">HOME</a>
+        <a href="../Login.php">LOGIN</a>
+        <a href="../PRODUCTS.MAIN/products.php">MEDICINE</a>
+        <a href="#">ABOUT</a>
     
-</div>
-<!--icons-->
+         
 
-<!--icons-->
-
+      </nav>
 
 
-<div class="shopping-cart">
 
-    <div class="box">
+      <?php
+      try {
+         $pdo = new PDO("mysql:host=localhost;dbname=pharm", "root", "root");
+         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+         $select_rows = $pdo->query("SELECT * FROM `cart`");
+         $row_count = $select_rows->rowCount();
+      } catch(PDOException $e) {
+         echo "Error: " . $e->getMessage();
+      }
+      ?>
 
-    </div>
-
-    <div class="box">
-
-
-        <div class="content">
-
-
-        </div>
-    </div>
-
-
-</div>
+      <a href="../SHOPCART/cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a>
 
 
 
 
+   </div>
 
 </header>
-
-
-

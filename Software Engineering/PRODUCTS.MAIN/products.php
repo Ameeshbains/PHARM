@@ -60,7 +60,7 @@ if(isset($message)){
 
 ?>
 
-<?php include '../PRODUCTS.MAIN/TEMPLATE/products.header.php'; ?>
+<?php include '../Template/NAVBAR.php'; ?>
 
 <div class="container">
 

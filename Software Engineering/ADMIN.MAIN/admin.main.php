@@ -20,7 +20,7 @@
    
 
 
-<?php include 'header.php'; ?>
+<?php include './ADMIN.MAIN/TEMPLATE/admin.main.header.php'; ?>
 
 <div class="container">
 

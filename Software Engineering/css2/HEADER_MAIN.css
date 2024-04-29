@@ -126,7 +126,7 @@ section{
 }
 
 .header .flex .logo{
-   margin-right: auto;
+   margin-right: 400PX;
    font-size: 2.5rem;
    color:var(--white);
 }

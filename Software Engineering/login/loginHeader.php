@@ -8,7 +8,7 @@
     <!--link for css file-->
     <link rel="stylesheet" type="text/css" href="/CSS/med.css">
     <link rel="stylesheet" type="text/css" href="/CSS/login.css">
-    <link rel="stylesheet" type="text/css" href="/signup/style.css">
+    <link rel="stylesheet" type="text/css" href="/css2/HEADER_MAIN.css">
     <!--link for css file-->
 
     <!--google font-->
@@ -27,12 +27,6 @@
 
 
     <!--header-->
-
-    <header class="header">
-        <a href="../INDEX.PHP" class="logo">
-            <img src="../images/logo.png">
-        </a>
-
 
 
 

@@ -9,7 +9,7 @@
 <?php 
 
 
-   include ("ADMIN/TEMPLATE/admin.navbar.php");
+   include ("./Template/NAVBAR.php");
    
 
 ?>

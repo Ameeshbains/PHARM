@@ -6,7 +6,7 @@
 
 <?php  include('Template/NAVBAR.php'); ?>
 
-<?php  include('PRODUCTphp/FOOTER2.php'); ?>
+<?php  include('INDEX/FOOTER2.php'); ?>
 
 
 

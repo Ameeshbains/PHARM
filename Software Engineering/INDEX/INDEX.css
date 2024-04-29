@@ -102,10 +102,11 @@ body{
 	padding-left: 50px;
 	text-align: center;
 	line-height: 1.6;
+	margin-top: 0PX;
 }
 
 .main .left h2{
-	padding-top: 46%;
+	padding-top: 10%;
 	font-size: 15px;
 	text-transform: capitalize;
 	color: var(--light-color);
@@ -142,8 +143,11 @@ body{
 
 
 
+}
 
-	.error {
+.error {
 		color: red;
 		font-size: 0.8em;
-        }
+}
+
+

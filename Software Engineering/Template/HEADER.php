@@ -7,9 +7,10 @@
 
     <!--link for css file-->
     <link rel="stylesheet" type="text/css" href="/CSS/med.css">
-    <link rel="stylesheet" type="text/css" href="/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/INDEX/INDEX.css">
     <link rel="stylesheet" type="text/css" href="/CSS/login.css">
-    <link rel="stylesheet" type="text/css" href="./nav.css">
+    <link rel="stylesheet" type="text/css" href="/Template/nav.css">
+    <link rel="stylesheet" type="text/css" href="./css2/HEADER_MAIN.css">
     
     
  
@@ -30,14 +31,6 @@
 <body>
 
 
-
-
-    <!--header-->
-
-    <header class="header">
-        <a href="../INDEX.PHP" class="logo">
-            <img src="../images/logo.png">
-        </a>
 
 
 

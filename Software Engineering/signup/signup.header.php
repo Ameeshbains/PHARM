@@ -8,8 +8,8 @@
 
 
     <link rel="stylesheet" type="text/css" href="/CSS/med.css">
-    <link rel="stylesheet" type="text/css" href="/CSS/style.css">
     <link rel="stylesheet" type="text/css" href="/signup/style.css">
+    <link rel="stylesheet" type="text/css" href="/css2/HEADER_MAIN.css">
 
 
 
@@ -36,11 +36,6 @@
 
 
     <!--header-->
-
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="../images/logo.png">
-        </a>
 
 
 

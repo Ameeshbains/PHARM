@@ -19,7 +19,10 @@ if(isset($_POST["submit"])){
         $sc->setpwd($_POST["pwd"]);
         $sc->getData();
 
-        echo"<script>document.location='../cust.php'</script>";
+        echo"<script>document.location='../PRODUCTS.MAIN/products.php'</script>";
+
+
+
 
 
     }

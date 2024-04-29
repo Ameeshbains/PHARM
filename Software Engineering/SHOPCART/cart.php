@@ -63,7 +63,7 @@ if(isset($_GET['delete_all'])){
 
 <?php 
 
-include "./TEMPLATE/cart.header.php";
+include "../Template/NAVBAR.php";
 
 ?>
 
@@ -113,7 +113,7 @@ include "./TEMPLATE/cart.header.php";
          };
          ?>
          <tr class="table-bottom">
-            <td><a href="products.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
+            <td><a href="../PRODUCTS.MAIN/products.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
             <td colspan="3">grand total</td>
             <td>$<?php echo $grand_total; ?>/-</td>
             <td><a href="cart.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
@@ -124,7 +124,7 @@ include "./TEMPLATE/cart.header.php";
    </table>
 
    <div class="checkout-btn">
-      <a href="checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
+      <a href="/checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
    </div>
 
 </section>

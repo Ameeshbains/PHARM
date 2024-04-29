@@ -128,7 +128,7 @@ class loginConfig{
                 session_start();
                 $_SESSION['regID']=$b['regID'];
 
-                echo"<script>document.location='../Product.php'</script>";
+                echo"<script>document.location='./PRODUCTS.MAIN/products.php'</script>";
 
             }
             else{

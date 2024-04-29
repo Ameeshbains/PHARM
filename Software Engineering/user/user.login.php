@@ -6,7 +6,7 @@
 
 require_once("../config/config.database.login.php");
 
-require_once("../CUSTOMER/cust.config.php");
+require_once("../CUSTOMER/cust.class.php");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($customer->loginAccess()) {
         // Redirect to some page after successful login
-        header("Location: ../cust.php");
+        header("Location: ../PRODUCTS.MAIN/products.php");
 
         exit();
     } else {
