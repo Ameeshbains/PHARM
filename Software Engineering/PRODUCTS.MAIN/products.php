@@ -1,36 +1,6 @@
 <?php
 
-@include './config/config.database.login.php';
-
-if(isset($_POST['add_to_cart'])){
-   $product_name = $_POST['product_name'];
-   $product_price = $_POST['product_price'];
-   $product_image = $_POST['product_image'];
-   $product_quantity = 1;
-
-   try {
-      $pdo = new PDO("mysql:host=localhost;dbname=pharm", "root", "root");
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-      $select_cart = $pdo->prepare("SELECT * FROM `cart` WHERE cartName = :product_name");
-      $select_cart->bindParam(':product_name', $product_name);
-      $select_cart->execute();
-
-      if($select_cart->rowCount() > 0){
-         $message[] = 'product already added to cart';
-      } else {
-         $insert_product = $pdo->prepare("INSERT INTO `cart`(cartName, cartPrice, cartIMG, cartQuant) VALUES(:product_name, :product_price, :product_image, :product_quantity)");
-         $insert_product->bindParam(':product_name', $product_name);
-         $insert_product->bindParam(':product_price', $product_price);
-         $insert_product->bindParam(':product_image', $product_image);
-         $insert_product->bindParam(':product_quantity', $product_quantity);
-         $insert_product->execute();
-         $message[] = 'product added to cart successfully';
-      }
-   } catch(PDOException $e) {
-      echo "Error: " . $e->getMessage();
-   }
-}
+include "../PRODUCTS.MAIN/class/product.class.php";
 
 ?>
 
@@ -50,15 +20,6 @@ if(isset($_POST['add_to_cart'])){
 </head>
 <body>
    
-<?php
-
-if(isset($message)){
-   foreach($message as $message){
-      echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
-   };
-};
-
-?>
 
 <?php include '../Template/NAVBAR.php'; ?>
 
@@ -72,10 +33,9 @@ if(isset($message)){
 
       <?php
       try {
-         $pdo = new PDO("mysql:host=localhost;dbname=pharm", "root", "root");
-         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-         $select_products = $pdo->query("SELECT * FROM `product`");
-         foreach ($select_products as $fetch_product) {
+
+         $products = $products->getAllProducts();
+         foreach ($products as $fetch_product) {
       ?>
 
       <form action="" method="post">

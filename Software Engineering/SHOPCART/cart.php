@@ -1,48 +1,3 @@
-<?php
-
-@include './config/config.database.login.php';
-
-try {
-   $pdo = new PDO("mysql:host=localhost;dbname=pharm", "root", "root");
-   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-   die("Database connection failed: " . $e->getMessage());
-}
-
-if(isset($_POST['update_update_btn'])){
-    $update_value = $_POST['update_quantity'];
-    $update_id = $_POST['update_quantity_id'];
-    try {
-        $stmt = $pdo->prepare("UPDATE `cart` SET cartQuant = ? WHERE cartID = ?");
-        $stmt->execute([$update_value, $update_id]);
-        header('location:cart.php');
-    } catch (PDOException $e) {
-        // Handle error
-    }
-}
-
-if(isset($_GET['remove'])){
-    $remove_id = $_GET['remove'];
-    try {
-        $stmt = $pdo->prepare("DELETE FROM `cart` WHERE cartID = ?");
-        $stmt->execute([$remove_id]);
-        header('location:cart.php');
-    } catch (PDOException $e) {
-        // Handle error
-    }
-}
-
-if(isset($_GET['delete_all'])){
-    try {
-        $stmt = $pdo->prepare("DELETE FROM `cart`");
-        $stmt->execute();
-        header('location:cart.php');
-    } catch (PDOException $e) {
-        // Handle error
-    }
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,10 +43,13 @@ include "../Template/NAVBAR.php";
 
          <?php 
 
-         // Fetching cart items using PDO
-         $select_cart = $pdo->query("SELECT * FROM `cart`");
+        include "../SHOPCART/class/cart.class.php";
+
+         
+         // Fetching cart items using ShoppingCart class
+         $cartItems = $shoppingCart->getCartItems();
          $grand_total = 0;
-         while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+         foreach ($cartItems as $fetch_cart) {
          ?>
 
          <tr>
@@ -124,7 +82,7 @@ include "../Template/NAVBAR.php";
    </table>
 
    <div class="checkout-btn">
-      <a href="/checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">procced to checkout</a>
+      <a href="/checkout.php" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>">proceed to checkout</a>
    </div>
 
 </section>
