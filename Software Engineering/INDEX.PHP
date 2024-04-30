@@ -9,6 +9,9 @@
 <?php  include('INDEX/FOOTER2.php'); ?>
 
 
+<?php  include('./FOOTER/FOOTER.php'); ?>
+
+
 
 
 

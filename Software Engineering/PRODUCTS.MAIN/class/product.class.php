@@ -40,7 +40,22 @@ class products
         }
     }
 
+    public function getProductById($productId) {
+        // Prepare and execute SQL query to retrieve product details by ID
+        $query = "SELECT * FROM product WHERE productId = :productId";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':productId', $productId);
+        $statement->execute();
 
+        // Fetch the product details
+        $product = $statement->fetch(PDO::FETCH_ASSOC);
+
+        // Close the database connection
+        $statement->closeCursor();
+
+        // Return the product details
+        return $product;
+    }
 
     public function getAllProducts()
     {

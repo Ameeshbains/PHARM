@@ -25,6 +25,14 @@
                     Not a member? <a href="signup.PHP">SIGN UP</a> || <a href="adminLogin.PHP">ADMIN</a>
                 </div>
             </form>
+
+            <?php
+            // Display error message if login failed
+            if(isset($errorMessage)) {
+                
+                echo "<p style='color: red;'>$errorMessage</p>";
+            }
+            ?>
         </div>
        
       </div>

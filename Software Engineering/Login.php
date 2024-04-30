@@ -18,3 +18,8 @@
 include('Template/FOOTER.php');
 
 ?>
+
+
+<?php  include('./FOOTER/FOOTER.php'); ?>
+
+

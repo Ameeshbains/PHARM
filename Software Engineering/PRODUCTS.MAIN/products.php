@@ -43,11 +43,17 @@ include "../PRODUCTS.MAIN/class/product.class.php";
 
             <img src="/uploaded_img/<?php echo $fetch_product['productIMG']; ?>" alt="">
 
-            <h3><?php echo $fetch_product['productName']; ?></h3>
+            <a href="C:\laragon\www\PHARM\Software Engineering\SINGLE_PRODUCT_PAGE\singleProd.main.php?productId=<?php echo $fetch_product['productID']; ?>">
+
+               <h3><?php echo $fetch_product['productName']; ?></h3>
+
+            </a>
+
 
             <div class="price">$<?php echo $fetch_product['productPrice']; ?>/-</div>
 
-
+      
+         
             <input type="hidden" name="product_name" value="<?php echo $fetch_product['productName']; ?>">
             <input type="hidden" name="product_price" value="<?php echo $fetch_product['productPrice']; ?>">
             <input type="hidden" name="product_image" value="<?php echo $fetch_product['productIMG']; ?>">
@@ -70,5 +76,18 @@ include "../PRODUCTS.MAIN/class/product.class.php";
 
 
 
+
+
+
 </body>
+
+
+
+
+
 </html>
+
+
+
+
+

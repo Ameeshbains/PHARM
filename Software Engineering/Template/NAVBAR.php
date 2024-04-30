@@ -12,7 +12,7 @@
         <a href="../INDEX.PHP">HOME</a>
         <a href="../Login.php">LOGIN</a>
         <a href="../PRODUCTS.MAIN/products.php">MEDICINE</a>
-        <a href="#">ABOUT</a>
+        <a href="../ABOUTMAIN.php">ABOUT</a>
     
          
 
