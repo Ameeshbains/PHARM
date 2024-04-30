@@ -1,7 +1,6 @@
 <?php
-
+// Include the product class file
 include "../PRODUCTS.MAIN/class/product.class.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -12,82 +11,64 @@ include "../PRODUCTS.MAIN/class/product.class.php";
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>products</title>
 
-   <!-- font awesome cdn link  -->
+   <!-- Font Awesome CDN link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-   <!-- custom css file link  -->
+   <!-- Custom CSS file link -->
    <link rel="stylesheet" href="../css2/HEADER_MAIN.css">
+   <link rel="stylesheet" href="./PRODUCTS.MAIN/css/product.main.css">
 </head>
 <body>
    
-
 <?php include '../Template/NAVBAR.php'; ?>
 
 <div class="container">
+   <section class="products">
+      <h1 class="heading">latest products</h1>
+      <div class="box-container">
 
-<section class="products">
+         <?php
+         try {
+            // Instantiate the products class
+            $products = new products();
+            // Retrieve all products
+            $productsList = $products->getAllProducts();
+            // Loop through each product
+            foreach ($productsList as $fetch_product) {
+         ?>
 
-   <h1 class="heading">latest products</h1>
+         <form action="" method="post">
+            <div class="box">
+               <!-- Display product image -->
+               <img src="/uploaded_img/<?php echo $fetch_product['productIMG']; ?>" alt="">
 
-   <div class="box-container">
-
-      <?php
-      try {
-
-         $products = $products->getAllProducts();
-         foreach ($products as $fetch_product) {
-      ?>
-
-      <form action="" method="post">
-         <div class="box">
-
-            <img src="/uploaded_img/<?php echo $fetch_product['productIMG']; ?>" alt="">
-
-            <a href="C:\laragon\www\PHARM\Software Engineering\SINGLE_PRODUCT_PAGE\singleProd.main.php?productId=<?php echo $fetch_product['productID']; ?>">
-
+               <!-- Display product name -->
                <h3><?php echo $fetch_product['productName']; ?></h3>
 
-            </a>
+               <!-- Display product price -->
+               <div class="price">$<?php echo $fetch_product['productPrice']; ?>/-</div>
+               <!-- Hidden form inputs to pass product details -->
+               <input type="hidden" name="product_name" value="<?php echo $fetch_product['productName']; ?>">
+               <input type="hidden" name="product_price" value="<?php echo $fetch_product['productPrice']; ?>">
+               <input type="hidden" name="product_image" value="<?php echo $fetch_product['productIMG']; ?>">
 
+               <a href="../SINGLE_PRODUCT_PAGE/singleProd.main.php?product_id=<?php echo $fetch_product['productID']; ?>" class="btn">View Details</a>
+               
+               <input type="submit" class="btn" value="add to cart" name="add_to_cart">
+            </div>
+         </form>
 
-            <div class="price">$<?php echo $fetch_product['productPrice']; ?>/-</div>
-
-      
-         
-            <input type="hidden" name="product_name" value="<?php echo $fetch_product['productName']; ?>">
-            <input type="hidden" name="product_price" value="<?php echo $fetch_product['productPrice']; ?>">
-            <input type="hidden" name="product_image" value="<?php echo $fetch_product['productIMG']; ?>">
-            <input type="submit" class="btn" value="add to cart" name="add_to_cart">
-         </div>
-      </form>
-
-      <?php
+         <?php
+            }
+         } catch(PDOException $e) {
+            // If an error occurs, display error message
+            echo "Error: " . $e->getMessage();
          }
-      } catch(PDOException $e) {
-         echo "Error: " . $e->getMessage();
-      }
-      ?>
+         ?>
 
-   </div>
-
-</section>
-
+      </div>
+   </section>
 </div>
 
-
-
-
-
-
 </body>
-
-
-
-
-
 </html>
-
-
-
-
-

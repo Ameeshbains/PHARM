@@ -1,0 +1,49 @@
+/* styles.css */
+.container1 {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 350PX;
+ }
+ 
+ .product-details {
+    display: flex;
+    align-items: center;
+ }
+ 
+ .container1 .product-image {
+    width: 200px; /* Adjust as needed */
+    margin-right: 20px;
+ }
+ 
+ .product-info {
+    flex: 1;
+ }
+
+
+ .container1 .h1 .price .btn{
+
+    margin-left: 20px;
+ }
+ 
+ .container1 .price {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+ }
+ 
+ .container1 .btn {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color, you can change it to match your design */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    margin-top: 40px;
+ }
+ 
+ .btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+ }
+ 

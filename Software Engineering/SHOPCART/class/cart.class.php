@@ -2,7 +2,9 @@
 
 @include './config/config.database.login.php';
 
-class ShoppingCart
+
+
+class ShoppingCart 
 {
     private $pdo;
 
@@ -59,6 +61,10 @@ class ShoppingCart
         return $cartItems;
     }
 }
+
+
+
+
 
 $shoppingCart = new ShoppingCart();
 

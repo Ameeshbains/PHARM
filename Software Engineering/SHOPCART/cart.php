@@ -64,7 +64,7 @@ include "../Template/NAVBAR.php";
                </form>   
             </td>
             <td>$<?php echo $sub_total = number_format($fetch_cart['cartPrice'] * $fetch_cart['cartQuant']); ?>/-</td>
-            <td><a href="cart.php?remove=<?php echo $fetch_cart['cartID']; ?>" onclick="return confirm('remove item from cart?')" class="delete-btn"> <i class="fas fa-trash"></i> remove</a></td>
+            <td><a href="cart.php?remove=<?php echo $fetch_cart['cartID']; ?>"  class="delete-btn"> <i class="fas fa-trash"></i> remove</a></td>
          </tr>
          <?php
            $grand_total += $sub_total;  
@@ -74,7 +74,7 @@ include "../Template/NAVBAR.php";
             <td><a href="../PRODUCTS.MAIN/products.php" class="option-btn" style="margin-top: 0;">continue shopping</a></td>
             <td colspan="3">grand total</td>
             <td>$<?php echo $grand_total; ?>/-</td>
-            <td><a href="cart.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
+            <td><a href="cart.php?delete_all" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
          </tr>
 
       </tbody>
