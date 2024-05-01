@@ -3,7 +3,7 @@
 
 
             <header>Sign Up</header>
-            <form action="/signup/signupProcess.php" method="post">
+            <form action="/signup/signupProcess.php" method="post" onsubmit="return validateForm()">
             <div class="field input">
                     <label for="username">USERNAME:</label>
                     <input type="text" name="userName" id="userName" autocomplete="off" required>
